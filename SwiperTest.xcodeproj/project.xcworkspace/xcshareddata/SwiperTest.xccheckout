@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AC18BB53-4236-4F5C-A1A8-3105E0399F1E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SwiperTest</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B3DDB04949B9DF536B52528A31277BB0DDC30526</key>
+		<string>https://github.com/ChaseBradbury/SwiperTest.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SwiperTest.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B3DDB04949B9DF536B52528A31277BB0DDC30526</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/ChaseBradbury/SwiperTest.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B3DDB04949B9DF536B52528A31277BB0DDC30526</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B3DDB04949B9DF536B52528A31277BB0DDC30526</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SwiperTest</string>
+		</dict>
+	</array>
+</dict>
+</plist>
