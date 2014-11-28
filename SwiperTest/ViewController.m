@@ -16,8 +16,26 @@
 
 - (void)viewDidLoad
 {
+    // Why does this not work?!?
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSLog([defaults boolForKey:@"initialized"] ? @"Defaults initialized" : @"Defaults NOT initialized" );
+    NSLog(@"Highscore: %d", [defaults integerForKey:@"Highscore"]);
+    
+    if (![defaults boolForKey:@"initialized"]) {
+        [defaults setBool:YES forKey:@"initialized"];
+        
+        //[defaults setInteger:0 forKey:@"Highscore"];
+        
+        [defaults synchronize];
+    }
+    
+    highscore = [defaults integerForKey:@"Highscore"];
+    highscoreLabel.text = [NSString stringWithFormat:@"Highscore: %i", highscore];
+    
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    // Do any additional setup after loading the view, typically from a nib.
     [self restartGame];
 }
 
@@ -88,9 +106,14 @@
 {
     if (score > highscore)
     {
+        
         genericLabel.text = @"New highscore!";
         highscore = score;
         highscoreLabel.text = [NSString stringWithFormat:@"Highscore: %i", highscore];
+        
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setInteger:highscore forKey:@"Highscore"];
+        [defaults synchronize];
         
         [timer invalidate];
         timer = nil;
