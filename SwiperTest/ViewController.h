@@ -18,6 +18,7 @@ typedef enum {
 @interface ViewController : UIViewController
 {
     IBOutlet UIButton *startButton;
+    IBOutlet UIButton *resetButton;
     IBOutlet UIImageView *arrowImage;
     IBOutlet UISwipeGestureRecognizer *swipeControl;
     IBOutlet UILabel *timeLabel;

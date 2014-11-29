@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad
 {
-    // Why does this not work?!?
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     NSLog([defaults boolForKey:@"initialized"] ? @"Defaults initialized" : @"Defaults NOT initialized" );
@@ -25,7 +24,7 @@
     if (![defaults boolForKey:@"initialized"]) {
         [defaults setBool:YES forKey:@"initialized"];
         
-        //[defaults setInteger:0 forKey:@"Highscore"];
+        [defaults setInteger:0 forKey:@"Highscore"];
         
         [defaults synchronize];
     }
@@ -59,6 +58,7 @@
     //highscore = 0;
     
     startButton.hidden = NO;
+    resetButton.hidden = NO;
     scoreLabel.hidden = YES;
     genericLabel.hidden = YES;
 }
@@ -66,6 +66,7 @@
 - (IBAction)startGame
 {
     startButton.hidden = YES;
+    resetButton.hidden = YES;
     swipeControl.enabled = YES;
     arrowImage.hidden = NO;
     timeLabel.hidden = NO;
@@ -202,6 +203,17 @@
                                            selector:@selector(countDown)
                                            userInfo:nil
                                             repeats:YES];
+}
+
+- (IBAction)resetHighscore
+{
+    highscore = 0;
+    
+    highscoreLabel.text = [NSString stringWithFormat:@"Highscore: %i", highscore];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setInteger:highscore forKey:@"Highscore"];
+    [defaults synchronize];
 }
 
 @end
