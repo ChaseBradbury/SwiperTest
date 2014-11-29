@@ -21,7 +21,8 @@
     NSLog([defaults boolForKey:@"initialized"] ? @"Defaults initialized" : @"Defaults NOT initialized" );
     NSLog(@"Highscore: %d", [defaults integerForKey:@"Highscore"]);
     
-    if (![defaults boolForKey:@"initialized"]) {
+    if (![defaults boolForKey:@"initialized"])
+    {
         [defaults setBool:YES forKey:@"initialized"];
         
         [defaults setInteger:0 forKey:@"Highscore"];
@@ -58,7 +59,7 @@
     //highscore = 0;
     
     startButton.hidden = NO;
-    resetButton.hidden = NO;
+    menuButton.hidden = NO;
     scoreLabel.hidden = YES;
     genericLabel.hidden = YES;
 }
@@ -66,7 +67,7 @@
 - (IBAction)startGame
 {
     startButton.hidden = YES;
-    resetButton.hidden = YES;
+    menuButton.hidden = YES;
     swipeControl.enabled = YES;
     arrowImage.hidden = NO;
     timeLabel.hidden = NO;
@@ -191,7 +192,8 @@
 {
     timeLabel.text = [NSString stringWithFormat:@"%i", --time];
     
-    if (time < 0) {
+    if (time < 0)
+    {
         [self endGame];
     }
 }
@@ -203,6 +205,26 @@
                                            selector:@selector(countDown)
                                            userInfo:nil
                                             repeats:YES];
+}
+
+- (IBAction)toggleMenu
+{
+    if (menuOpen)
+    {
+        menuOpen = NO;
+        [menuButton setTitle:@"Menu" forState:UIControlStateNormal];
+        resetButton.hidden = YES;
+        highscoreLabel.hidden = NO;
+        [self restartGame];
+    } else
+    {
+        menuOpen = YES;
+        resetButton.hidden = NO;
+        [menuButton setTitle:@"Back" forState:UIControlStateNormal];
+        startButton.hidden = YES;
+        highscoreLabel.hidden = YES;
+    }
+    
 }
 
 - (IBAction)resetHighscore

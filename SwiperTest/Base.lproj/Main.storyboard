@@ -43,7 +43,7 @@
                             </label>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Generic" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HkD-Jp-TNA">
                                 <rect key="frame" x="10" y="165" width="300" height="120"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="39"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Highscore: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DN-Vr-Mno">
@@ -51,8 +51,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8n4-OA-fyG">
-                                <rect key="frame" x="77" y="95" width="167" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HWh-K2-kWf">
+                                <rect key="frame" x="100" y="75" width="121" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <state key="normal" title="Menu">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleMenu" destination="vXZ-lx-hvc" eventType="touchUpInside" id="K6f-eh-jNC"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8n4-OA-fyG">
+                                <rect key="frame" x="59" y="129" width="203" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Reset Highscore">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -71,6 +82,7 @@
                         <outlet property="arrowImage" destination="09U-Vg-wcX" id="m3k-cO-pJb"/>
                         <outlet property="genericLabel" destination="HkD-Jp-TNA" id="mHe-ll-Sqw"/>
                         <outlet property="highscoreLabel" destination="0DN-Vr-Mno" id="CIZ-JW-3Zv"/>
+                        <outlet property="menuButton" destination="HWh-K2-kWf" id="xf8-UJ-ltO"/>
                         <outlet property="resetButton" destination="8n4-OA-fyG" id="9ya-se-3Sf"/>
                         <outlet property="scoreLabel" destination="bNR-66-lxZ" id="kNW-IY-IWb"/>
                         <outlet property="startButton" destination="609-B3-GWt" id="dLq-a9-YGZ"/>

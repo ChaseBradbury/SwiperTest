@@ -19,6 +19,7 @@ typedef enum {
 {
     IBOutlet UIButton *startButton;
     IBOutlet UIButton *resetButton;
+    IBOutlet UIButton *menuButton;
     IBOutlet UIImageView *arrowImage;
     IBOutlet UISwipeGestureRecognizer *swipeControl;
     IBOutlet UILabel *timeLabel;
@@ -37,6 +38,8 @@ typedef enum {
     NSTimer *timer;
     
     float interval;
+    
+    BOOL menuOpen;
 }
 
 - (IBAction)startGame;
